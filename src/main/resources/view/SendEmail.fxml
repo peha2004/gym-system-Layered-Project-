@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gymsystem_layeredproject.controller.SendEmailController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="400.0" prefWidth="592.0">
+            <children>
+                <TextField fx:id="txtTo" layoutX="22.0" layoutY="14.0" prefHeight="26.0" prefWidth="552.0" promptText="tx:" />
+                <TextField fx:id="txtSubject" layoutX="25.0" layoutY="51.0" prefHeight="26.0" prefWidth="546.0" promptText="subject:" />
+                <Button layoutX="161.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="26.0" prefWidth="286.0" text="Send" />
+                <TextArea fx:id="txtMessage" layoutX="25.0" layoutY="88.0" prefHeight="160.0" prefWidth="546.0" promptText="Message" />
+            </children>
+        </AnchorPane>
+    </children>
+
+</AnchorPane>
