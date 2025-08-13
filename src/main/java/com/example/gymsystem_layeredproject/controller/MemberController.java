@@ -131,8 +131,11 @@
 
             if (memberBO.save(dto)) {
                 new Alert(Alert.AlertType.INFORMATION, " Member saved!").show();
+                loadTableData();
+                resetPage();
 
                 txtMemberId.setText(memberBO.generateMemberId());
+
 
             } else {
                 new Alert(Alert.AlertType.ERROR, " Failed to save Member").show();
