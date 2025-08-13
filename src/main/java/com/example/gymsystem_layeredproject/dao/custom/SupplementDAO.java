@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface SupplementDAO  {
+public interface SupplementDAO extends CrudDAO<Supplement>  {
 
     public  List<Supplement> getAllSupplements() throws SQLException, ClassNotFoundException;
     public  boolean addSupplement(Supplement dto) throws SQLException, ClassNotFoundException;

@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface SupplementTransactionDAO  {
+public interface SupplementTransactionDAO extends CrudDAO<SupplementTransaction> {
 
     public  boolean saveTransaction(SupplementTransaction dto) throws SQLException, ClassNotFoundException;
     public  String generateNextTransactionId() throws SQLException, ClassNotFoundException;

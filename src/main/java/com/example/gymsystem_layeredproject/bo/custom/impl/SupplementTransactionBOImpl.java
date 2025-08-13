@@ -1,6 +1,7 @@
 package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 import com.example.gymsystem_layeredproject.bo.custom.SupplementTransactionBO;
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.SupplementTransactionDAOImpl;
 import com.example.gymsystem_layeredproject.entity.SupplementCartItem;
 import com.example.gymsystem_layeredproject.entity.SupplementTransaction;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplementTransactionBOImpl implements SupplementTransactionBO {
-    SupplementTransactionDAOImpl transactionDAO = new SupplementTransactionDAOImpl();
+    SupplementTransactionDAOImpl transactionDAO = (SupplementTransactionDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SUPPLEMENTTRANSACTION);
 
     @Override
     public boolean saveTransaction(SupplementTransactionDTO dto) throws SQLException, ClassNotFoundException {

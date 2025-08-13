@@ -1,6 +1,7 @@
 package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 import com.example.gymsystem_layeredproject.bo.custom.SupplementBO;
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.SupplementDAOImpl;
 import com.example.gymsystem_layeredproject.entity.Supplement;
 import com.example.gymsystem_layeredproject.dto.SupplementDTO;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class SupplementBOImpl implements SupplementBO {
 
-    SupplementDAOImpl supplementDAO = new SupplementDAOImpl();
+    SupplementDAOImpl supplementDAO = (SupplementDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.SUPPLEMENT);
     @Override
     public List<SupplementDTO> getAllSupplements() throws SQLException, ClassNotFoundException {
         List<Supplement> supplements = supplementDAO.getAllSupplements();

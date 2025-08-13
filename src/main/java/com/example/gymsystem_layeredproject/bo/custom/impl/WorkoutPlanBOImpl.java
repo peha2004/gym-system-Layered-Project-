@@ -1,6 +1,7 @@
 package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 import com.example.gymsystem_layeredproject.bo.custom.WorkoutPlanBO;
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.WorkoutPlanDAOImpl;
 import com.example.gymsystem_layeredproject.entity.WorkoutPlan;
 import com.example.gymsystem_layeredproject.dto.WorkoutDTO;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class WorkoutPlanBOImpl implements WorkoutPlanBO {
 
-   WorkoutPlanDAOImpl workoutPlanDAO = new WorkoutPlanDAOImpl();
+   WorkoutPlanDAOImpl workoutPlanDAO = (WorkoutPlanDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.WORKOUTPLAN);
     @Override
     public boolean save(WorkoutDTO dto) throws SQLException, ClassNotFoundException {
         return workoutPlanDAO.save(new WorkoutPlan(dto.getPlanName(),

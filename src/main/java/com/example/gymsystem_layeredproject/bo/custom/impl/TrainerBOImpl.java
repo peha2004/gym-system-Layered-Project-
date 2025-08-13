@@ -2,6 +2,7 @@ package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 
 
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.TrainerDAOImpl;
 import com.example.gymsystem_layeredproject.bo.custom.TrainerBO;
 import com.example.gymsystem_layeredproject.entity.Trainer;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrainerBOImpl implements TrainerBO {
-    TrainerDAOImpl trainerDAO = new TrainerDAOImpl();
+    TrainerDAOImpl trainerDAO = (TrainerDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.TRAINER);
 
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {

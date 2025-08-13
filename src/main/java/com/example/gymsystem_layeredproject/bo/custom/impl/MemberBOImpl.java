@@ -2,6 +2,7 @@ package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 
 
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.MemberDAOImpl;
 import com.example.gymsystem_layeredproject.bo.custom.MemberBO;
 import com.example.gymsystem_layeredproject.entity.Member;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class MemberBOImpl implements MemberBO {
 
-  MemberDAOImpl memberDAO = new MemberDAOImpl();
+  MemberDAOImpl memberDAO = (MemberDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.MEMBER);
 
 
     @Override

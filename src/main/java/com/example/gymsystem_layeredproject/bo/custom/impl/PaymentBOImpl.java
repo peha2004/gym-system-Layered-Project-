@@ -1,6 +1,7 @@
 package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.PaymentDAOImpl;
 import com.example.gymsystem_layeredproject.bo.custom.PaymentBO;
 import com.example.gymsystem_layeredproject.entity.Payment;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PaymentBOImpl implements PaymentBO {
-    PaymentDAOImpl paymentDAO = new PaymentDAOImpl();
+    PaymentDAOImpl paymentDAO = (PaymentDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENT);
 
 //    @Override
 //    public boolean save() {

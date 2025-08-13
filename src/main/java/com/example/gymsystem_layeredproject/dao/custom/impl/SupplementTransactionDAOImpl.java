@@ -66,4 +66,24 @@ public class SupplementTransactionDAOImpl implements SupplementTransactionDAO {
         }
         return list;
     }
+
+    @Override
+    public boolean save(SupplementTransaction dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public List<SupplementTransaction> getAll() throws SQLException, ClassNotFoundException {
+        return List.of();
+    }
+
+    @Override
+    public boolean update(SupplementTransaction dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
 }

@@ -40,7 +40,26 @@ public class SupplementDAOImpl implements SupplementDAO {
         }
     }
     public  boolean updateSupplementQuantity(String supplementId, int newQty) throws SQLException, ClassNotFoundException {
-        return SQLUtil.executeUpdate(
-                "UPDATE Supplement SET quantity = ? WHERE supplement_id = ?", newQty, supplementId);
+        return SQLUtil.executeUpdate("UPDATE Supplement SET quantity = ? WHERE supplement_id = ?", newQty, supplementId);
+    }
+
+    @Override
+    public boolean save(Supplement dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public List<Supplement> getAll() throws SQLException, ClassNotFoundException {
+        return List.of();
+    }
+
+    @Override
+    public boolean update(Supplement dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
     }
 }

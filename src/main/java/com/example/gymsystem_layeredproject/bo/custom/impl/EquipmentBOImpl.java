@@ -2,6 +2,7 @@ package com.example.gymsystem_layeredproject.bo.custom.impl;
 
 
 
+import com.example.gymsystem_layeredproject.dao.DAOFactory;
 import com.example.gymsystem_layeredproject.dao.custom.impl.EquipmentDAOImpl;
 import com.example.gymsystem_layeredproject.bo.custom.EquipmentBO;
 import com.example.gymsystem_layeredproject.entity.Equipment;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EquipmentBOImpl implements EquipmentBO {
-   EquipmentDAOImpl equipmentDAO = new EquipmentDAOImpl();
+   EquipmentDAOImpl equipmentDAO = (EquipmentDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.EQUIPMENT);
 
     @Override
     public boolean save(EquipmentDTO dto) throws SQLException, ClassNotFoundException {

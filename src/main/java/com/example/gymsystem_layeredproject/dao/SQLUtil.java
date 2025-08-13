@@ -36,9 +36,9 @@ public class SQLUtil {
 
     private static Connection getCurrentConnection() throws SQLException, ClassNotFoundException {
         if (transactionalConnection != null) {
-            return transactionalConnection; // use same connection for transaction
+            return transactionalConnection;
         }
-        return DBConnection.getConnection(); // non-transactional mode
+        return DBConnection.getConnection();
     }
 
     public static ResultSet executeQuery(String sql, Object... ob) throws SQLException, ClassNotFoundException {
