@@ -14,14 +14,10 @@ import java.util.List;
 public class PaymentDAOImpl implements PaymentDAO {
 
     public  boolean save(Payment entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.executeUpdate(
-                "INSERT INTO Payment (payment_id, member_id, plan_name, payment_method, date, amount) VALUES (?, ?, ?, ?, ?, ?)", entity.getPaymentId(), entity.getMemberId(), entity.getPlanName(), entity.getPaymentMethod(), entity.getDate(), entity.getAmount()
-        );
+        return SQLUtil.executeUpdate("INSERT INTO Payment (payment_id, member_id, plan_name, payment_method, date, amount) VALUES (?, ?, ?, ?, ?, ?)", entity.getPaymentId(), entity.getMemberId(), entity.getPlanName(), entity.getPaymentMethod(), entity.getDate(), entity.getAmount());
     }
     public  String generatePaymentId() throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.executeQuery(
-                "SELECT payment_id FROM Payment ORDER BY payment_id DESC LIMIT 1"
-        );
+        ResultSet rst = SQLUtil.executeQuery("SELECT payment_id FROM Payment ORDER BY payment_id DESC LIMIT 1");
         if (rst.next()) {
             String lastId = rst.getString("payment_id");
             int num = Integer.parseInt(lastId.substring(1)) + 1;

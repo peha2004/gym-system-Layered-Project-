@@ -13,7 +13,6 @@ public interface EquipmentBO extends SuperBO {
     public  boolean save( EquipmentDTO dto) throws SQLException, ClassNotFoundException;
     public List<EquipmentDTO> getAllEquipment() throws SQLException, ClassNotFoundException;
     public  String generateEquipmentId() throws SQLException, ClassNotFoundException;
-    //public  boolean update(EquipmentDTO dto) ;
     boolean update(EquipmentDTO dto) throws SQLException, ClassNotFoundException;
     public  boolean delete(String equipmentId) throws SQLException, ClassNotFoundException;
 }

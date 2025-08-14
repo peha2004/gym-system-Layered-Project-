@@ -17,15 +17,12 @@ public class SupplementTransactionDAOImpl implements SupplementTransactionDAO {
         try {
             SQLUtil.beginTransaction();
 
-            SQLUtil.executeUpdate("INSERT INTO SupplementTransaction VALUES (?, ?, ?, ?)",
-                    dto.getTransactionId(), dto.getMemberId(), dto.getDate(), dto.getTotalAmount());
+            SQLUtil.executeUpdate("INSERT INTO SupplementTransaction VALUES (?, ?, ?, ?)", dto.getTransactionId(), dto.getMemberId(), dto.getDate(), dto.getTotalAmount());
 
             for (SupplementCartItem item : dto.getItems()) {
-                SQLUtil.executeUpdate("INSERT INTO SupplementTransactionItem VALUES (?, ?, ?, ?)",
-                        dto.getTransactionId(), item.getSupplementId(), item.getQuantity(), item.getPrice());
+                SQLUtil.executeUpdate("INSERT INTO SupplementTransactionItem VALUES (?, ?, ?, ?)", dto.getTransactionId(), item.getSupplementId(), item.getQuantity(), item.getPrice());
 
-                SQLUtil.executeUpdate("UPDATE Supplement SET quantity = quantity - ? WHERE supplement_id = ?",
-                        item.getQuantity(), item.getSupplementId());
+                SQLUtil.executeUpdate("UPDATE Supplement SET quantity = quantity - ? WHERE supplement_id = ?", item.getQuantity(), item.getSupplementId());
             }
 
             SQLUtil.commit();
@@ -39,9 +36,7 @@ public class SupplementTransactionDAOImpl implements SupplementTransactionDAO {
 
     @Override
     public String generateNextTransactionId() throws SQLException, ClassNotFoundException {
-        ResultSet rs = SQLUtil.executeQuery(
-                "SELECT transaction_id FROM SupplementTransaction ORDER BY transaction_id DESC LIMIT 1"
-        );
+        ResultSet rs = SQLUtil.executeQuery("SELECT transaction_id FROM SupplementTransaction ORDER BY transaction_id DESC LIMIT 1");
         if (rs.next()) {
             String lastId = rs.getString(1);
             int nextNum = Integer.parseInt(lastId.substring(1)) + 1;

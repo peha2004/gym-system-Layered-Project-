@@ -14,10 +14,6 @@ import java.util.List;
 public class PaymentBOImpl implements PaymentBO {
     PaymentDAOImpl paymentDAO = (PaymentDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENT);
 
-//    @Override
-//    public boolean save() {
-//        return false;
-//    }
 
     @Override
     public boolean save(PaymentDTO dto) throws SQLException, ClassNotFoundException {

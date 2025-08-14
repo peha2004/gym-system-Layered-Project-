@@ -38,10 +38,7 @@ public class TrainerBOImpl implements TrainerBO {
        return trainerDTOList;
     }
 
-//    @Override
-//    public boolean save() {
-//        return false;
-//    }
+
 
     @Override
     public boolean save(TrainerDTO dto) throws SQLException, ClassNotFoundException {

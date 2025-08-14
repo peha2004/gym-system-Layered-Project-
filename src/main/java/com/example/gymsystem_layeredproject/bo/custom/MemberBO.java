@@ -13,6 +13,5 @@ public interface MemberBO extends SuperBO {
     public  List<MemberDTO> getAllMembers() throws SQLException, ClassNotFoundException;
     public  boolean update(MemberDTO dto) throws SQLException, ClassNotFoundException;
     public  boolean delete(String id) throws SQLException, ClassNotFoundException;
-
     public  List<String> getAllMemberIds() throws SQLException, ClassNotFoundException;
 }

@@ -19,14 +19,7 @@ public class SupplementTransactionBOImpl implements SupplementTransactionBO {
 
     @Override
     public boolean saveTransaction(SupplementTransactionDTO dto) throws SQLException, ClassNotFoundException {
-//        SupplementTransaction transaction = new SupplementTransaction(
-//                dto.getTransactionId(),
-//                dto.getMemberId(),
-//                dto.getDate(),
-//                dto.getTotalAmount(),
-//                dto.getItems() // items are already in DTO form; used directly in Entity too
-//        );
-//        return transactionDAO.saveTransaction(transaction);
+
         List<SupplementCartItem> entityItems = new ArrayList<>();
         for (var dtoItem : dto.getItems()) {
             entityItems.add(new SupplementCartItem(

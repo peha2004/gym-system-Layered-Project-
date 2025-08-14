@@ -27,7 +27,6 @@ public class SupplementBOImpl implements SupplementBO {
         }
         return dtos;
     }
-
     @Override
     public boolean addSupplement(SupplementDTO dto) throws SQLException, ClassNotFoundException {
         Supplement s = new Supplement(

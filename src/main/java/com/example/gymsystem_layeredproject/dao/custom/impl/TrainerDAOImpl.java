@@ -12,8 +12,7 @@ import java.util.List;
 
 public class TrainerDAOImpl implements TrainerDAO {
     public String generateNewId() throws SQLException, ClassNotFoundException {
-        ResultSet rst = SQLUtil.executeQuery(
-                "SELECT trainer_id FROM Trainer ORDER BY trainer_id DESC LIMIT 1");
+        ResultSet rst = SQLUtil.executeQuery("SELECT trainer_id FROM Trainer ORDER BY trainer_id DESC LIMIT 1");
         if (rst.next()) {
             String lastId = rst.getString("trainer_id");
             if (lastId != null && lastId.length() > 1) {
@@ -37,9 +36,7 @@ public class TrainerDAOImpl implements TrainerDAO {
         return trainers;
     }
     public boolean save(Trainer entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.executeUpdate(
-                "INSERT INTO Trainer (trainer_id, name, contact, specialization) VALUES (?, ?, ?, ?)", entity.getTrainerId(), entity.getTrainerName(), entity.getTrainerPhone(), entity.getSpecialization()
-        );
+        return SQLUtil.executeUpdate("INSERT INTO Trainer (trainer_id, name, contact, specialization) VALUES (?, ?, ?, ?)", entity.getTrainerId(), entity.getTrainerName(), entity.getTrainerPhone(), entity.getSpecialization());
     }
     public List<String> getAllIds() throws SQLException, ClassNotFoundException {
         ResultSet rst = SQLUtil.executeQuery("SELECT trainer_id FROM Trainer");
@@ -50,11 +47,9 @@ public class TrainerDAOImpl implements TrainerDAO {
         return trainerIds;
     }
     public boolean update(Trainer entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.executeUpdate(
-                "UPDATE Trainer SET name = ?, contact = ?, specialization = ? WHERE trainer_id = ?", entity.getTrainerName(), entity.getTrainerPhone(), entity.getSpecialization(), entity.getTrainerId());
+        return SQLUtil.executeUpdate("UPDATE Trainer SET name = ?, contact = ?, specialization = ? WHERE trainer_id = ?", entity.getTrainerName(), entity.getTrainerPhone(), entity.getSpecialization(), entity.getTrainerId());
     }
     public boolean delete(String trainerId) throws SQLException, ClassNotFoundException {
-        return SQLUtil.executeUpdate(
-                "DELETE FROM Trainer WHERE trainer_id = ?", trainerId);
+        return SQLUtil.executeUpdate("DELETE FROM Trainer WHERE trainer_id = ?", trainerId);
     }
 }

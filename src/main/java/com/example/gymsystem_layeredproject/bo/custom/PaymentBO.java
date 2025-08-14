@@ -8,11 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface PaymentBO extends SuperBO {
-
-//    public  boolean save();
-
     boolean save(PaymentDTO dto) throws SQLException, ClassNotFoundException;
-
     public  String generatePaymentId() throws SQLException, ClassNotFoundException;
     public List<PaymentDTO> getAllPayments() throws SQLException, ClassNotFoundException;
 }

@@ -16,10 +16,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-//import org.example.gymsystem.Model.MemberModel;
-//import org.example.gymsystem.Model.TrainerModel;
 import com.example.gymsystem_layeredproject.dto.WorkoutDTO;
-//import org.example.gymsystem.dto.WorkoutDTO;
+
 
 import java.io.IOException;
 import java.net.URL;

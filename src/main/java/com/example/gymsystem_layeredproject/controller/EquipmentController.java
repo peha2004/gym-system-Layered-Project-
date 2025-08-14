@@ -124,7 +124,7 @@ EquipmentBOImpl equipmentBO = (EquipmentBOImpl) BOFactory.getInstance().getBO(BO
         columnEquipmentStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         txtEquipmentStatus.setItems(FXCollections.observableArrayList("Available", "In Use", "Under Maintenance"));
-
+        txtEquipmentId.setEditable(false);
         try {
             txtEquipmentId.setText(equipmentBO.generateEquipmentId());
             loadTableData();

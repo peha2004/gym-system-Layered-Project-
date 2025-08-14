@@ -18,8 +18,8 @@ public class PaymentDTO {
         this.paymentMethod = paymentMethod;
         this.date = date;
         this.amount = amount;
-
     }
+
     public String getPaymentId() {return paymentId;}
     public String getMemberId() {return memberId;}
     public String getPlanName() {return planName;}

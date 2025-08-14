@@ -31,18 +31,15 @@
             return list;
         }
         public  boolean update(WorkoutPlan entity) throws SQLException, ClassNotFoundException {
-            return SQLUtil.executeUpdate("UPDATE Workout_Plan SET duration = ?, end_date = ?, email = ? WHERE plan_name = ? AND member_id = ? AND trainer_id = ? AND start_date = ?", entity.getDuration(), entity.getEndDate(), entity.getEmail(), entity.getPlanName(), entity.getMemberId(), entity.getTrainerId(), entity.getStartDate()
-            );
+            return SQLUtil.executeUpdate("UPDATE Workout_Plan SET duration = ?, end_date = ?, email = ? WHERE plan_name = ? AND member_id = ? AND trainer_id = ? AND start_date = ?", entity.getDuration(), entity.getEndDate(), entity.getEmail(), entity.getPlanName(), entity.getMemberId(), entity.getTrainerId(), entity.getStartDate());
         }
 
         @Override
         public boolean delete(String id) throws SQLException, ClassNotFoundException {
-            return SQLUtil.executeUpdate(
-                    "DELETE FROM Workout_Plan WHERE plan_name = ?", id);
+            return SQLUtil.executeUpdate("DELETE FROM Workout_Plan WHERE plan_name = ?", id);
         }
 
         public  boolean delete(String planName, String memberId, String trainerId, LocalDate startDate , String email) throws SQLException, ClassNotFoundException {
-            return SQLUtil.executeUpdate(
-                    "DELETE FROM Workout_Plan WHERE plan_name = ? AND member_id = ? AND trainer_id = ? AND start_date = ? AND email = ?", planName, memberId, trainerId, startDate, email);
+            return SQLUtil.executeUpdate("DELETE FROM Workout_Plan WHERE plan_name = ? AND member_id = ? AND trainer_id = ? AND start_date = ? AND email = ?", planName, memberId, trainerId, startDate, email);
         }
     }

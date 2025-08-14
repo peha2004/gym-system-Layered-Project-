@@ -16,12 +16,10 @@ public class MemberBOImpl implements MemberBO {
 
   MemberDAOImpl memberDAO = (MemberDAOImpl) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.MEMBER);
 
-
     @Override
     public String generateMemberId() throws SQLException, ClassNotFoundException {
         return memberDAO.generateMemberId();
     }
-
     @Override
     public boolean save(MemberDTO dto) throws SQLException, ClassNotFoundException {
         return  memberDAO.save(new Member(
@@ -30,7 +28,6 @@ public class MemberBOImpl implements MemberBO {
                 dto.getGender(),
                 dto.getContact()));
     }
-
     @Override
     public List<MemberDTO> getAllMembers() throws SQLException, ClassNotFoundException {
         List<Member> members = memberDAO.getAll();
@@ -47,7 +44,6 @@ public class MemberBOImpl implements MemberBO {
 
         return dtos;
     }
-
     @Override
     public boolean update(MemberDTO dto) throws SQLException, ClassNotFoundException {
         return memberDAO.update(new Member(
@@ -57,12 +53,10 @@ public class MemberBOImpl implements MemberBO {
                 dto.getContact()
         ));
     }
-
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return memberDAO.delete(id);
     }
-
     @Override
     public List<String> getAllMemberIds() throws SQLException, ClassNotFoundException {
         return memberDAO.getAllMemberIds();

@@ -10,10 +10,7 @@ import java.util.List;
 public interface TrainerBO extends SuperBO {
     public  String generateNewId() throws SQLException, ClassNotFoundException;
     public List<TrainerDTO> getAll() throws SQLException, ClassNotFoundException;
-    //public  boolean save();
-
     boolean save(TrainerDTO dto) throws SQLException, ClassNotFoundException;
-
     public  List<String> getAllIds() throws SQLException, ClassNotFoundException;
     public  boolean update(TrainerDTO dto) throws SQLException, ClassNotFoundException;
     public  boolean delete(String trainerId) throws SQLException, ClassNotFoundException;
